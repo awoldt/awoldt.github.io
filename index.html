@@ -16,33 +16,9 @@
 
             <h3 id="task-prompt" class="text-center mt-4" ></h3>
             <span  class="text-center text-muted"><p id="score"></p></span>
+            <span class="text-center"><p id="timer" style="color: red"></p></span>
         </div>
     </body>
     <!--scripts-->
     <script src="colors.js"></script>
-    <script>
-        //styles button clicks
-        const col1 = document.getElementsByClassName("col-4")[0];
-        const col2 = document.getElementsByClassName("col-4")[1];
-        const col3 = document.getElementsByClassName("col-4")[2];
-
-        col1.addEventListener("mousedown", () => {
-            col1.style.border = "3px solid black";
-        })
-        col1.addEventListener("mouseup", () => {
-            col1.style.border = "none";
-        })
-        col2.addEventListener("mousedown", () => {
-            col2.style.border = "3px solid black";
-        })
-        col2.addEventListener("mouseup", () => {
-            col2.style.border = "none";
-        })
-        col3.addEventListener("mousedown", () => {
-            col3.style.border = "3px solid black";
-        })
-        col3.addEventListener("mouseup", () => {
-            col3.style.border = "none";
-        })
-    </script>
 </html>

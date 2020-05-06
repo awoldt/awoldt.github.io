@@ -1,12 +1,34 @@
 let bgColors = ["red", "blue", "yellow", "green", "orange", "purple", "black", "pink"];
 const htmlCols = document.getElementsByClassName("col-4");
 
+//color that user must click 
 let chosenColor;
 
 //users score (tally one to correct and incorrect as user chooses colors)
 let correct = 0;
 let incorrect = 0;
 let score;
+
+//default value when user accesses page
+let challengeStart = false;
+
+let time = 60;
+let timer;
+const countDown = () => {
+    document.getElementById("timer").innerHTML = time;
+        if(time == -1) {
+            document.getElementById("timer").innerHTML = "";
+            correct = 0;
+            incorrect = 0;
+            document.getElementById("score").innerHTML = "";
+            alert("test is over");
+            challengeStart = false;
+            time = 60;
+            clearInterval(timer);
+        } else {
+            time -= 1;
+        }
+}
 
 const calcScore = () => {
     score = correct/(correct + incorrect) * 100;
@@ -19,6 +41,15 @@ const calcScore = () => {
 }
 
 const checkColor = (x) => {
+    //if test has started or ongoing
+    if(challengeStart == false) {
+        challengeStart = true;
+        countDown();
+        timer = setInterval(countDown, 1000);
+    } else {
+        //do nothing
+    }
+
     let colorClicked = x.id;
     if(colorClicked != chosenColor) {
         incorrect += 1;
