@@ -21,6 +21,7 @@ const countDown = () => {
             correct = 0;
             incorrect = 0;
             document.getElementById("score").innerHTML = "";
+            addStyle();
             alert("test is over");
             challengeStart = false;
             time = 60;
